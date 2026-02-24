@@ -4,6 +4,9 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+###
+demo/src/main/java/com/example/demo/model/Produto.java
+
 ### STS ###
 .apt_generated
 .classpath
@@ -30,4 +33,5 @@ build/
 !**/src/test/**/build/
 
 ### VS Code ###
-.vscode/
+.vscode/settings.json
+
