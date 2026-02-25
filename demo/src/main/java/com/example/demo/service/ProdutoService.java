@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -15,8 +16,19 @@ public class ProdutoService {
         this.produtoRepository = produtoRepository;
     }
 
-    public List<Produto> listarrodutos() {
+    public List<Produto> listaprodutos() {
         return produtoRepository.findAll();
     }
     
+    public Optional<Produto> buscarId(long id) {
+        return produtoRepository.findById(id);
+    }
+
+    public Produto salvarProduto(Produto produto) {
+        return produtoRepository.save(produto);
+    }
+
+    public void deletarProduto(long id) {
+        produtoRepository.deleteById(id);
+    }
 }
