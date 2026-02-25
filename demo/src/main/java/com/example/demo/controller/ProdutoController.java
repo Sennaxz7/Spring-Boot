@@ -32,9 +32,8 @@ public class ProdutoController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Produto> buscarId(@PathVariable long id) {
-        return produtoService.buscarId(id)
-        .map(ResponseEntity::ok)
-        .orElse(ResponseEntity.notFound().build());
+        Produto produto = produtoService.buscarId(id);
+        return ResponseEntity.ok(produto);
     }
 
     @PostMapping
