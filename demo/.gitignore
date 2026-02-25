@@ -6,6 +6,7 @@ target/
 
 ###
 demo/src/main/java/com/example/demo/model/Produto.java
+demo/src/main/java/com/example/demo/model/Usuario.java
 
 ### STS ###
 .apt_generated
