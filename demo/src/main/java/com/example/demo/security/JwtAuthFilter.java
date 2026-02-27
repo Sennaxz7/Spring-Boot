@@ -17,7 +17,7 @@ import jakarta.servlet.http.HttpServletResponse;
 @Component
 public class JwtAuthFilter extends OncePerRequestFilter {
 
-    public final UserDetailsService userDetailsService;
+    private final UserDetailsService userDetailsService;
 
     public JwtAuthFilter(UserDetailsService userDetailsService) {
         this.userDetailsService = userDetailsService;
@@ -26,7 +26,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
-
+        
         String authHeader = request.getHeader("Authorization");
         if (authHeader == null || !authHeader.startsWith("Bearer")) {
             filterChain.doFilter(request, response);
@@ -46,4 +46,6 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         }
     }
 
+
+    
 }
